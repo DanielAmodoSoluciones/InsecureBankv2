@@ -36,14 +36,12 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
                 String textPhoneno = phn.toString();
                 String textMessage = "Updated Password from: "+decryptedPassword+" to: "+newpass;
                 SmsManager smsManager = SmsManager.getDefault();
-                System.out.println("For the changepassword - phonenumber: "+textPhoneno+" password is: "+textMessage);
                 smsManager.sendTextMessage(textPhoneno, null, textMessage, null, null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
         else {
-            System.out.println("Phone number is null");
         }
 	}
 

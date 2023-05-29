@@ -83,7 +83,6 @@ public class ChangePassword extends Activity {
 		changePassword_text = (EditText) findViewById(R.id.editText_newPassword);
 		Intent intent = getIntent();
 		uname = intent.getStringExtra("uname");
-		System.out.println("newpassword=" + uname);
 		textView_Username = (TextView) findViewById(R.id.textView_Username);
 		textView_Username.setText(uname);
 
@@ -162,7 +161,6 @@ public class ChangePassword extends Activity {
 									Toast.makeText(getApplicationContext(), login_response_message + ". Restart application to Continue.", Toast.LENGTH_LONG).show();
                                     TelephonyManager phoneManager = (TelephonyManager)getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
                                     String phoneNumber = phoneManager.getLine1Number();
-                                    System.out.println("phonno:"+phoneNumber);
 
                                     /*
                                     The function that handles the SMS activity
@@ -215,7 +213,6 @@ public class ChangePassword extends Activity {
 
         if(TextUtils.isEmpty(phoneNumber.toString().trim())) {
 
-            System.out.println("Phone number Invalid.");
         }
         else
         {

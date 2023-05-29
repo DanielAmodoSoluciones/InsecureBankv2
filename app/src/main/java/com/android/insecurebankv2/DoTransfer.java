@@ -197,7 +197,6 @@ public class DoTransfer extends Activity {
 								jsonObject = new JSONObject(result);
 								acc1 = jsonObject.getString("from");
 								acc2 = jsonObject.getString("to");
-								System.out.println("Message:" + jsonObject.getString("message") + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString());
 								final String status = new String("\nMessage:" + "Success" + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString() + "\n");
 								try {
 									//	Captures the successful transaction status for Transaction history tracking
@@ -217,7 +216,6 @@ public class DoTransfer extends Activity {
                             Toasteroid.show(DoTransfer.this, "Transfer Failed!!", Toasteroid.STYLES.ERROR, Toasteroid.LENGTH_SHORT);
 
 
-                            System.out.println("Message:" + "Failure" + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString());
 							final String status = new String("\nMessage:" + "Failure" + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString() + "\n");
 							//   Captures the failed transaction status for Transaction history tracking
 							String MYFILE = Environment.getExternalStorageDirectory() + "/Statements_" + usernameBase64ByteString + ".html";

@@ -29,7 +29,6 @@ public class ViewStatement extends Activity {
 		//String statementLocation=Environment.getExternalStorageDirectory()+ "/Statements_" + uname + ".html";
 		String FILENAME="Statements_" + uname + ".html";
 		File fileToCheck = new File(Environment.getExternalStorageDirectory(), FILENAME);
-		System.out.println(fileToCheck.toString());
 		if (fileToCheck.exists()) {
 			//Toast.makeText(this, "Statement Exists!!",Toast.LENGTH_LONG).show();
 
