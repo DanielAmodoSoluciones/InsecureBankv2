@@ -26,15 +26,15 @@ public class ViewStatement extends Activity {
 		setContentView(R.layout.activity_view_statement);
 		Intent intent = getIntent();
 		uname = intent.getStringExtra("uname");
-		//String statementLocation=Environment.getExternalStorageDirectory()+ "/Statements_" + uname + ".html";
+		//String statementLocation=Environment.getAbsolutePath()+ "/Statements_" + uname + ".html";
 		String FILENAME="Statements_" + uname + ".html";
-		File fileToCheck = new File(Environment.getExternalStorageDirectory(), FILENAME);
+		File fileToCheck = new File(Environment.getAbsolutePath(), FILENAME);
 		if (fileToCheck.exists()) {
 			//Toast.makeText(this, "Statement Exists!!",Toast.LENGTH_LONG).show();
 
 			WebView mWebView = (WebView) findViewById(R.id.webView1);
 			//   Location where the statements are stored locally on the device sdcard
-			mWebView.loadUrl("file://" + Environment.getExternalStorageDirectory() + "/Statements_" + uname + ".html");
+			mWebView.loadUrl("file://" + Environment.getAbsolutePath() + "/Statements_" + uname + ".html");
 			mWebView.getSettings().setJavaScriptEnabled(true);
 			mWebView.getSettings().setSaveFormData(true);
 			mWebView.getSettings().setBuiltInZoomControls(true);

@@ -26,7 +26,7 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
 
 		if (phn != null) {
 			try {
-                SharedPreferences settings = context.getSharedPreferences(MYPREFS, Context.MODE_WORLD_READABLE);
+                SharedPreferences settings = context.getSharedPreferences(MYPREFS,0);
                 final String username = settings.getString("EncryptedUsername", null);
                 byte[] usernameBase64Byte = Base64.decode(username, Base64.DEFAULT);
                 usernameBase64ByteString = new String(usernameBase64Byte, "UTF-8");

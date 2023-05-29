@@ -58,7 +58,7 @@ public class DoLogin extends Activity {
 	public static final String MYPREFS = "mySharedPreferences";
 	String serverip = "";
 	String serverport = "";
-	String protocol = "http://";
+	String protocol = "https://";
 	BufferedReader reader;
 	SharedPreferences serverDetails;
 
@@ -142,7 +142,6 @@ public class DoLogin extends Activity {
 			result = result.replace("\n", "");
 			if (result != null) {
 				if (result.indexOf("Correct Credentials") != -1) {
-					Log.d("Successful Login:", ", account=" + username + ":" + password);
 					saveCreds(username, password);
 					trackUserLogins();
 					Intent pL = new Intent(getApplicationContext(), PostLogin.class);

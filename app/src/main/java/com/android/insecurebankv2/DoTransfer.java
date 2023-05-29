@@ -75,7 +75,7 @@ public class DoTransfer extends Activity {
 	InputStream in ;
 	String serverip = "";
 	String serverport = "";
-	String protocol = "http://";
+	String protocol = "https://";
 	Button button1;
 	SharedPreferences serverDetails;
 	public static final String MYPREFS2 = "mySharedPreferences";
@@ -200,7 +200,7 @@ public class DoTransfer extends Activity {
 								final String status = new String("\nMessage:" + "Success" + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString() + "\n");
 								try {
 									//	Captures the successful transaction status for Transaction history tracking
-									String MYFILE = Environment.getExternalStorageDirectory() + "/Statements_" + usernameBase64ByteString + ".html";
+									String MYFILE = Environment.getAbsolutePath() + "/Statements_" + usernameBase64ByteString + ".html";
 									BufferedWriter out2 = new BufferedWriter(new FileWriter(MYFILE, true));
 									out2.write(status);
                                     out2.write("<hr>");
@@ -218,7 +218,7 @@ public class DoTransfer extends Activity {
 
 							final String status = new String("\nMessage:" + "Failure" + " From:" + from.getText().toString() + " To:" + to.getText().toString() + " Amount:" + amount.getText().toString() + "\n");
 							//   Captures the failed transaction status for Transaction history tracking
-							String MYFILE = Environment.getExternalStorageDirectory() + "/Statements_" + usernameBase64ByteString + ".html";
+							String MYFILE = Environment.getAbsolutePath() + "/Statements_" + usernameBase64ByteString + ".html";
 							try {
 								BufferedWriter out2 = new BufferedWriter(new FileWriter(MYFILE, true));
 								out2.write(status);

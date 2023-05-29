@@ -67,7 +67,7 @@ public class ChangePassword extends Activity {
 	BufferedReader reader;
 	String serverip = "";
 	String serverport = "";
-	String protocol = "http://";
+	String protocol = "https://";
 	SharedPreferences serverDetails;
 
 	@Override
