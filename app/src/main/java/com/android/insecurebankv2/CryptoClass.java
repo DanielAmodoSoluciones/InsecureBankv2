@@ -21,13 +21,6 @@ The page that holds the logic for encryption and decryption used in the applicat
 */
 public class CryptoClass {
 
-	// The super secret key used by the encryption function
-	String key = "This is the super secret key 123";
-
-	// The initialization vector used by the encryption function
-	byte[] ivBytes = {
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-	};
 	String plainText;
 	byte[] cipherData;
 	String base64Text;

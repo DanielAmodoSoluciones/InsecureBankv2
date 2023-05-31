@@ -48,7 +48,12 @@ public class PostLogin extends Activity {
 
         root_status =(TextView) findViewById(R.id.rootStatus);
         //  Display root status
-        showRootStatus();
+		try {
+			showRootStatus();
+		} catch (RootedDeviceException e) {
+			// Muestra algún mensaje de error
+			e.printStackTrace();
+		}
         //	Display emulator status
         checkEmulatorStatus();
 
@@ -119,6 +124,7 @@ public class PostLogin extends Activity {
         if(isrooted==true)
         {
             root_status.setText("Rooted Device!!");
+			throw new RootedDeviceException();
         }
         else
         {
